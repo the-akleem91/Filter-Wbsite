@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# Getting Started with Filter App
+
+The "Filter Job" app for GitHub is a web application that allows users to search for job listings based on different filtering options. It fetches job data from the GitHub Jobs API and presents them in a user-friendly interface.
+
+Key Features:
+
+Job Filtering: The app provides various filter options, such as job type (Full-time, Part-time, Contract, Internship) and job categories (e.g., Software Engineer, Marketing, Data Analyst).
+
+Responsive UI: The app is designed to be responsive, providing an optimal user experience across different devices and screen sizes.
+
+Pagination: The job listings are displayed in a paginated format, allowing users to navigate through multiple pages of job results.
+
+Apply Links: Each job listing includes an "Apply Now" link that directs users to the corresponding job posting on GitHub.
+
+Multiple Selection: Users can select multiple categories for filtering, making it easier to find jobs that match their interests.
+
+Job Details: For each job, essential details are displayed, such as the position, location, company name, job type, and category.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
