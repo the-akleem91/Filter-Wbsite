@@ -1,0 +1,63 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+.filter-box {
+  margin-left:4rem ;
+   margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 893px) {
+.filter-box {
+  margin: 0rem;
+  display: grid;
+}
+.filter{
+  min-width: min(17rem , 90vw);
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+  margin-right: 0;
+}
+}
+
+.filter{
+  min-width: min(17rem , 90vw);
+  max-width: min(17rem , 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+   margin-top: 2rem;
+  margin-right: 5rem;
+}
+
+.category-option{
+ min-height: 2rem;
+}
+.category-option::-webkit-scrollbar {
+  display: none;
+}
+
+.jobs {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.label {
+  color:#34383b ;
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+.header{
+  color: #364fc7 ;
+}
