@@ -1,4 +1,4 @@
-# Getting Started with Filter JOb Website UI
+# Getting Started with Filter Job Website UI
 
 The "Filter Job" app for GitHub is a web application that allows users to search for job listings based on different filtering options. It fetches job data from the GitHub Jobs API and presents them in a user-friendly interface.
 
