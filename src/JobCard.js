@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./JobCard.css";
 
 function JobCard({ jobs, selectedJobType, selectedJobCategories }) {
-  const itemsPerPage = 10;
+  const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalJobs = jobs.data.length;
@@ -16,10 +16,10 @@ function JobCard({ jobs, selectedJobType, selectedJobCategories }) {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
 
-  const getPageData = () => {
+  const getPageData = (filteredJobs) => {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    return jobs.data.slice(startIndex, endIndex);
+    return filteredJobs.slice(startIndex, endIndex);
   };
 
   const filterJob = () => {
@@ -42,11 +42,13 @@ function JobCard({ jobs, selectedJobType, selectedJobCategories }) {
 
   const filteredJobs = filterJob();
 
+  const PageData = getPageData(filteredJobs);
+
   return (
     <div>
-      { filteredJobs.length === 0 ? <div className="not-find">No jobs match the selected criteria.</div> :
+      { PageData.length === 0 ? <div className="not-find">No jobs match the selected criteria.</div> :
         <div className="job-card-container">
-        {filteredJobs.slice(0, itemsPerPage).map((item) => (
+        {PageData.slice(0, itemsPerPage).map((item) => (
           <JobContent key={item.jobId} item={item} />
         ))}
       </div>}
@@ -56,7 +58,7 @@ function JobCard({ jobs, selectedJobType, selectedJobCategories }) {
         </button>
         <p>
           <span className="page">
-            <strong>{currentPage}</strong>/{totalPages}
+            <strong>{PageData.length === 0 ? 0 : currentPage}</strong>/{PageData.length === 0 ? 0 :totalPages }
           </span>
         </p>
         <button onClick={handleNextPage} disabled={currentPage === totalPages} className="btns next">
